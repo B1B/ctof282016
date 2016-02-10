@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TemperatureConverter">
     <head>
         <title>In Class Project</title>
     </head>
     
     <body>
-        <label>Fahreheit</label>
-        <input type="text" name="toFConverter" value="">
-        
-        <label>Celsius</label>
-        <input type="text" name="toCConverter" value="">
+        <div ng-controller="Temperature">
+            <label>Enter Temperature</label> <br />
+            <button>F to C</button> 
+            <button>C to F</button> <br />
+            
+            <hr />
+            
+            <label>Fahrenheit</label>
+            <input type="text" name="FConverter" value="">
+            
+            <hr />
+            
+            <label>Celsius</label>
+            <input type="text" name="CConverter" value="">
+        </div>
     </body>
 </html>
