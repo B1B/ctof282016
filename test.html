@@ -1,6 +1,14 @@
-<html>
-   
-</html>
-<body>
+<html ng-app="TemperatureConverter">
+    <head>
+        <title>Converter</title>
+    </head>
     
-</body>
+    <body>
+        <div ng-controller="TempConverter as tc">
+            <input id="Temperature" type="text" class="" />
+            <button>C to F</button>
+            <button>F to C</button>
+            Temperature: {{temperature}}
+        </div>
+    </body>
+</html>
