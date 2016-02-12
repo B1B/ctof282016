@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="TemperatureConverter">
+<html ng-app="TempConverter">
     <head>
-        
-        <title>In Class Project</title>
+        <title>In Class Project - Temperature Converter</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="angular-animate.min.js"></script>
         <script src="app.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
     
     <body>
-        <div ng-controller="TempConverter as tc">
+        <div ng-controller="ConverterController as cc">
+                <div ng-controller="ButtonController as bc">
+                Value to be converted: <input type="text" ng-model="cc.tempValue" /> <br /><br />
+
+                <!--buttons to call the functions-->
+                <button ng-click="cc.FtoC()" ng-hide="bc.show_fahrenheit"><a href="#" ng-click="bc.show()">Convert to Celsius</button><br />
+                <button ng-click="cc.CtoF()" ng-hide="bc.show_celsius"><a hre="#" ng-click="bc.hide()">Convert to Fahrenheit</a></button><br /><br />
             
-            
-            <label>Temperature:</label>
-            <input type="text" ng-model="tc.tempValue" />
-            
-            <!--<button ng-click="tc.FtoC()">F to C</button> -->
-            <button ng-click="tc.CtoF()">C to F</button> <br />
-            
-            C- Temperature: {{tc.Ctemperature}}<br />
+                <!--showing converstions-->
+                <div ng-hide="bc.show_celsius" >Celsius Temperature: {{cc.celsius}}</div>
+                <div ng-hide="bc.show_fahrenheit">Fahrenheit Temperature: {{cc.fahrenheit}}</div>
+          </div>
         </div>
     </body>
 </html>
